@@ -1,0 +1,52 @@
+import sys
+import datetime
+
+x=datetime.datetime.now()
+
+print("TODAY'S DATE & TIME =>",  x)
+
+
+def sum(a,b):
+  ressum=a+b
+  return float(ressum)
+  
+def subtract(a,b):
+  return float(a-b)
+
+def mul(a,b):
+  resmul=a*b
+  return float(resmul)
+
+def divide(a,b):
+  return float(a/b)
+
+def modulo(a,b):
+  return float(a%b)
+
+def exponential(a,b):
+  return float(a**b)
+
+def floorDivision(a,b):
+  return float(a//b)  
+
+def main():
+  a=float(input('Vaalue of Number-1 is ->  '))
+  assert a>0
+  b=float(input('Value of Number-2 is ->  '))
+  assert b>0
+  print('SUM of the numbers is =  ',sum(a,b))
+  
+  print('DIFFERENCE of the numbers is =  ',subtract(a,b))
+  
+  print('PRODUCT of the numbers is = ',mul(a,b))
+  
+  print('QUOTIENT of the numbers is =  ',divide(a,b))
+  
+  print('REMINDER of the numbers is =  ',modulo(a,b))
+  
+  print('EXPONENTIAL of the number1^number2 is =  ',exponential(a,b))
+  
+  print('FLOOR DIVISION of the numbers is =  ',floorDivision(a,b))
+
+if __name__=="__main__" :
+  main()
