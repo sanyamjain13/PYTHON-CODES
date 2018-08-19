@@ -1,0 +1,14 @@
+#regular expression program
+import re
+print("enter the text :")
+text=input()
+print("enter the pattern to be searched :")
+pat=input()
+
+def find(pat,text):
+  match=re.search(pat,text)
+  if match:
+    print("pattern successfully found,i.e :-", match.group())
+  else:
+    print("sorry word not found!!!! :(")
+find(pat,text)
