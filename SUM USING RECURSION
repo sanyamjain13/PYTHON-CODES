@@ -1,0 +1,31 @@
+def successor(num):
+	'''
+	Objective: To find the successor of a number using recursion
+	inout variables:
+			    num: whose successor we need to find
+				output is the successor of number
+	'''
+	#Approach: successor(num)=num+1
+	if num>0:
+		return num+1
+	else:
+		return num
+
+def predecessor(n,m=0):
+    '''
+	Objective: To find the predecessor of a number using recursion
+	inout variables:
+			    n: whose predecessor we need to find
+                            m: it is the control variable
+	'''
+	#Approach: successor(m)==n then predecessor of n is m
+    if successor(m)==n:
+                    return m
+    else:
+             return predecessor(n,successor(m))
+
+def sum(m,n):
+    if n==0:
+        return m
+    else:
+        return sum(successor(m),predecessor(n))
