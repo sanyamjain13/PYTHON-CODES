@@ -25,7 +25,12 @@ def predecessor(n,m=0):
              return predecessor(n,successor(m))
 
 def sum(m,n):
+'''
+	Objective: To find the sum of two numbers using recursion
+'''
     if n==0:
         return m
+    if m==0:
+       return n
     else:
         return sum(successor(m),predecessor(n))
