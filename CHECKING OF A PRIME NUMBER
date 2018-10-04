@@ -20,7 +20,7 @@ def prime(num):
     elif num%2==0: 
         print(num,"is not a prime number")
 
-    #Here we are checking the prime for only the odd numbers if prime or not
+    #Here we are checking for only the odd numbers if prime or not
     
     else:
         for i in range(3,num,2): '''
