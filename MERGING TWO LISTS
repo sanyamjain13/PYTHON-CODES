@@ -1,0 +1,47 @@
+def insertlist(lst,value,i=0):
+    '''
+    objective: To Insert a number in the list which should be sorted\
+    input variables:
+                   lst: list of the numbers
+                   value: Value we need to insert
+                   i= Index where we are inserting
+    '''
+    #Approach: using fucntion insertlist() and using recursion
+    if lst==[]:
+        lst.insert(i,value)
+    elif lst[i:]==[]:
+        lst.append(value)
+    elif lst[i]>value:
+        lst.insert(i,value)
+    else:
+        insertlist(lst,value,i=i+1)
+
+#a=[1,2,5]
+#insertlist(a,6)
+#print(a)
+
+def mergelist(lst1,lst2,j=0):
+    '''
+    objective: To merge two list where one list is sorted and another is unsorted
+    input variables:
+                   lst1: sorted list
+                   lst2:unsorted list
+                   j=index of the list2
+                   output:Merged list which is sorted
+    
+    '''
+    #Approach: Use of function insertlist() to sort the values and mergelist to merge
+    if lst2==[]:
+        return lst1
+    elif lst2[j:]==[]:
+        return
+    else:
+        insertlist(lst1,lst2[j])
+        mergelist(lst1,lst2,j=j+1)
+        return lst1
+a=[1,2,3,6]
+b=[5,4,1,2]
+print(mergelist(a,b))
+
+
+
