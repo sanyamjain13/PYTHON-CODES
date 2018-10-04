@@ -1,13 +1,45 @@
 def prime(num):
-    for i in range(2,num):
-        if num%i==0:
-            print(num,"is not a prime number")
-            break
-        else:
-            print(num,"is a prime number")
-            break
+    
+    '''
+    objective: To Find a number if its a prime number or not
+    input variables:
+                num: Number to check if it's a prime ot not
+                output: It is a prime number or not a prime number on
+                        the basis of evaluation
+    '''
+    #Approach: If a number is divisible by 'i' then it is not a prime number else prime
+    #Prime number has only two factors which is 1 and the number itself            
+
+    #Constraint that the number should be greater or equal to 2
+    if num<2:
+        print("Number should be greater than or equal to 2")
+
+        
+    #Here we are checking prime for all the even numbers if prime or not
+    
+    elif num%2==0: 
+        print(num,"is not a prime number")
+
+    #Here we are checking the prime for only the odd numbers if prime or not
+    
+    else:
+        for i in range(3,num,2): '''
+                                range function which begings from i=3, till the
+                                index smaller than the number , and iterates over
+                                all the odd indices
+                                '''
+            if num%i==0:
+                print(num,"is not a prime number")
+                break
+
+            else:
+                print(num,"is a prime number")
+                break
+        
 
 if __name__=="__main__":
     print("Enter the number-")
-    a=int(input())
-    prime(a)
+    
+    a=int(input()) #Input of a number which is to be checked if a prime or not
+    
+    prime(a) #invoking of a function prime()
