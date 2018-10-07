@@ -1,0 +1,32 @@
+#LIST COMPREHENSIONS
+#new_list = [expression(i) for i in old_list if filter(i)]
+
+
+'''
+x,y,z are the dimensions of cuboid
+we need to show all the possible combinatons of coordinates (i,j,k)
+on 3D grib where i+j+k is not equal to the n
+'''
+
+x=int(input())
+y=int(input())
+z=int(input())
+n=int(input())
+#new list=[expression for loop with if else condition]
+a= [[i,j,k] for i in range(x+1) for j in range(y+1) for k in range(z+1) if i + j + k != n]
+print (a)
+
+
+#printing of a table using list comprehension
+x=[ i*2 for i in range(1,10)]
+print (x)
+
+#printing of first letter of a word
+a=["hi","my","name","is","list"]
+b=[words[0] for words in a]
+print(b)
+
+#working with elements of sublist
+a=[[1,2],[3,4],[5,6]]
+b=[x[1] for x in a]
+print(b)
