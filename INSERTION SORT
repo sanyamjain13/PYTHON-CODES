@@ -1,0 +1,42 @@
+def insertlist(value, lst, i=0):
+    '''
+    Objective : To insert the value at the correct position in the list
+    Input variable:
+                value: value to be inserted at the right position
+                lst: the list which is sorted
+                i: index where the element is inserted
+                output: sorted list with the correct position
+    '''
+    #Approach : if lst[i]<lst[i-1] , then swap the numbers and i=i-1
+    
+    if i==0:
+        return lst
+    if lst[i]>=lst[i-1]:
+        return lst
+    else:
+        temp=lst[i]
+        lst[i]=lst[i-1]
+        lst[i-1]=temp
+
+        insertlist(value,lst,i-1)
+    
+
+def sortlist(lst1,j=0):
+    '''
+    objective: To sort the given list
+    input variables:
+                lst1: the list which need to be sorted
+                j: index of the numbers in the lst1
+    '''
+    #Approach: using function insertlis() and recusrion
+    if j==len(lst1):
+        return
+
+    else:
+        insertlist(lst1[j],lst1,j)
+        sortlist(lst1,j+1)
+        return lst1
+
+a=[6,2,4,9,3]
+print(sortlist(a))
+ 
