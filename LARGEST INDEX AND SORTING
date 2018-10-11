@@ -1,0 +1,39 @@
+def largest(a,n,i=-1):
+    '''
+    objective: To find the largest elements's index in the sublist
+               starting from the index n
+    Input variables:
+                    a = list of the numbers
+                    n = index from where the search has to begin
+                    i= index of largest element
+    output: Index of the largest element
+
+    '''
+    #Approach: Compare the element at n with element at i and change the value accordingly
+    if n<0:
+        n=len(a)+n
+    if n>=len(a):
+        return i
+    if i==-1:
+        i=n
+    elif a[n]>a[i]:
+        i=n
+    return largest(a,n+1,i)
+
+def selection_sort(b,index=0):
+    '''
+    objective: To sort the list of elements descending order
+    input variables:
+                   b=list to be sorted
+    output : list after sorted in descending order
+
+    '''
+    #Approach: The largest() to find the index of maximum element and swap with the element at index 
+    
+    if b[index:]!=[]:
+        j=largest(b,index)
+        temp=b[j]
+        b[j]=b[index]
+        b[index]=temp
+        selection_sort(b,index+1)
+    
