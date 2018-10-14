@@ -1,0 +1,32 @@
+if __name__ == '__main__':
+    n = int(input())
+    list1=[]
+    list2=[]
+    for i in range(n):
+        kn=map(int,input().split())
+        arr= map(int,input().split())
+        list1.insert(i,list(kn))
+        list2.insert(i,sorted(list(arr),reverse=True))
+    '''    
+    for j in range(n):
+            print("N And K = ",list1[j])
+            print("Scores - ",list2[j])
+    '''    
+    count=[]
+    for i in range(n):
+        num=list1[i][0]
+        k=list1[i][1]
+        ctr=k
+        for j in range(k,num):
+            if list2[i][k-1]==list2[i][j]:
+                ctr+=1
+            else:
+                break
+        count.insert(i,ctr)
+        
+    
+    for  i in range(len(count)):
+        print(count[i])
+    
+    
+
