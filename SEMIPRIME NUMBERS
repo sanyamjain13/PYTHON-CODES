@@ -1,0 +1,44 @@
+
+def semiprime(m):
+
+    '''
+    objective- To find if a number is a semiprime or not
+
+    semipime numbers are those numbers which have only two factors as prime numbers
+    numbers.For example- 15 is a semiprime because it can be factorised in (3,5)
+    and also the factors should be different prime numbers such as 9=3X3 but it is
+    not a semiprime.
+
+    '''
+    
+    if m<4: return 0
+    factors=[]
+    for x in range(2,int(m//2)+1):
+        z=m
+        while m%x==0:
+            m=m//x
+            factors.append(x)
+    if len(factors)==2:
+        if factors[1]!=factors[0]:
+            return 1
+    return 0
+
+def checkSum(num):
+    '''
+    checking if a number is a sum of two semiprime numbers or not
+    example- 30
+    30=15+15
+    and 15 is a semiprime number
+    '''
+    for i in range(6,num//2+1): #SMALLEST SEMIPRIME STARTS FROM 6
+        j=num-i
+        if semiprime(i)==semiprime(j)==1:
+            return "YES"
+    return 'NO'
+
+if __name__=='__main__':
+    n=int(input())
+    for i in range(n):
+        num=int(input())
+        print(checkSum(num))
+        
