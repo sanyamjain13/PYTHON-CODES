@@ -1,0 +1,59 @@
+'''
+A shuffle move means taking an arbitrary number of cards from the top of the deck
+and putting them at the bottom of the deck in the same relative order.
+For example, if we have a deck of cards with numbers (5,7,3,3,8,2), it is allowed to
+take the top three cards (5,7,3) and put them at the bottom; the result is (3,8,2,5,7,3)
+You are trying to convince Chef that sometimes, it is impossible to sort the deck in
+non-decreasing order using at most one shuffle move.
+That is why you need to write a program that determines if it is possible to sort a given deck or not.
+
+EXAMPLE - 3 4 5 1 2
+Now taking of top 3 cards and put them at the bottom
+Now It Becomes - 1 2 3 4 5
+It is sorted now
+
+'''
+n=int(input())
+list1=[]
+list2=[]
+#list3=[]
+for i in range(n):
+    m=int(input())
+    k=map(int,input().split())
+    list1.insert(i,list(k))
+#print(list1)
+#list3=list1
+#print(list3)
+for j in range(n):
+    list2.insert(j,list1[j][0:3])
+    del(list1[j][0:3])
+    list1[j].extend(list2[j][:])
+    #list3.insert(j,list1[j])
+#print(list1)
+
+for m in range(n):
+    flag=0
+    for n in range(len(list1[m])):
+            index=len(list1[m])-1
+            if n==index: break
+            if list1[m][n]<list1[m][n+1]:
+                flag=1
+            else: flag=-1
+    if flag==1:
+        print("YES")
+    else: print("NO")              
+            
+'''
+
+for k in range(n):
+    list3[k].sort()
+    print(list3[k])
+    if list3[k][0:]==list1[k][0:]:
+        print("YES")
+    else:
+        print("NO")       
+#print(list1)
+#print(list2)
+
+'''
+    
