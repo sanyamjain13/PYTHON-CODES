@@ -1,0 +1,49 @@
+def swap(lst,lower_index,i):
+
+    '''
+
+    Objective: To swap the two consecutive numbers and to place the heaviest
+               element at the proper place until we reach the lower index
+
+    Input parameters:
+                    lst: list of numbers to be swapped
+                    lower_index: index of the element till which we need to do
+                                 the comparison
+                    i: internal parameter    
+    '''
+    #Approach : Compare the 2 consecutive numbers & if the no is greater swap until we reach lower index
+
+    if i==lower_index:
+        return
+    
+    if lst[i]>lst[i-1]:
+        temp=lst[i]
+        lst[i]=lst[i-1]
+        lst[i-1]=temp
+
+    swap(lst,lower_index,i-1)
+
+
+def bubble_sort(lst1,j=-1):
+
+    '''
+    Objective: To sort a given list in descending order
+
+    Input parameters:
+                    lst1: list which needs to be sorted
+                    j: internal parameter (lower index)
+
+    '''
+    #Approach: Using the swap() function
+
+    if j==-1:
+        j=0
+
+    if j!=len(lst1)-1:
+        swap(lst1,j,len(lst1)-1)
+        bubble_sort(lst1,j+1)
+        
+
+
+            
+    
